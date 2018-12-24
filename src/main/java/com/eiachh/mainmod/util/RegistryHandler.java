@@ -31,16 +31,6 @@ import net.minecraft.world.storage.loot.LootTableList;
 public class RegistryHandler {
  
 	
-	@SubscribeEvent
-	public void onLootTablesLoaded(LootTableLoadEvent event) {
-	 
-		System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
-	    if (event.getName().equals(LootTableList.CHESTS_SIMPLE_DUNGEON)) {
-	         
-	    }
-	}
-	
-	
 	
 	
 	

@@ -5,11 +5,14 @@ import org.apache.logging.log4j.Logger;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.storage.loot.LootTableList;
 
+import com.eiachh.mainmod.event.LootTableCatch;
 import com.eiachh.mainmod.proxy.IProxy;
 import com.eiachh.mainmod.recipes.My_Recipes;
 import com.eiachh.mainmod.tabs.NewTab;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -38,17 +41,8 @@ public class MainModpls {
     public static IProxy proxy;
     
     public static Logger logger;
+
     
-    
-    @SubscribeEvent
-	public void onLootTablesLoaded(LootTableLoadEvent event) {
-	 
-		System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
-		this.asd="kecske";
-	    if (event.getName().equals(LootTableList.CHESTS_SIMPLE_DUNGEON)) {
-	         
-	    }
-	}
     
     
     @EventHandler
@@ -56,7 +50,7 @@ public class MainModpls {
         logger = event.getModLog();
         proxy.preInit(event);
         //this.asd="RTRTRTRTRTRTTTRT";
-        
+        MinecraftForge.EVENT_BUS.register(new LootTableCatch());
         
     }
     
